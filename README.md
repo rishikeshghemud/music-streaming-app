@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MusicQube
 
-## Getting Started
+A simple music player to play music previews.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Running the project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run the project locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ 1. Run `npm i` inside project root folder to install dependencies.
+ 2. Start the development server with `npm run dev` 
+ 3. Open your web browser and go to: `http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Technologies Used
 
-## Learn More
+ 1. **Next.js** — v16.0.1
+ 2. **TanStack Query** — v5
+ 3. **Redux Toolkit** — v2.10
+ 4. **TypeScript** — for static typing
+ 5. **Shadcn/UI** — v3.5.0
 
-To learn more about Next.js, take a look at the following resources:
+## API Keys
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No API keys are required.  
+The application uses **Deezer’s public API**, which provides 30-second song previews for playback.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Screenshots
 
-## Deploy on Vercel
+![Alt text](./images/Screenshot%202025-11-04%20172747.png?raw=true "Light Mode")
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Alt text](./images/Screenshot%202025-11-04%20172831.png?raw=true "Dark Mode")
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Alt text](./images//Screenshot%202025-11-04%20173121.png?raw=true "Tablet View")
+
+![Alt text](./images/Screenshot%202025-11-04%20173247.png?raw=true "Mobile View")
+
+![Alt text](./images/Screenshot%202025-11-04%20173415.png?raw=true "Player")
+
