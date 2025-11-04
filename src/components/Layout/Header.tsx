@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Music className="w-8 h-8 text-primary" />
-          <h1 className="text-2xl font-bold">Music Stream</h1>
+          <h1 className="text-2xl font-bold">MusicQube</h1>
         </div>
         <Button variant="ghost" size="icon" onClick={toggleTheme}>
           {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}

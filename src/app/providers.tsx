@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { store } from '@/lib/store/store';
 
+
+// Provider for tanstack query
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

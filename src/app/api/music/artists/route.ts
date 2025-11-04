@@ -4,6 +4,7 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const limit = searchParams.get('limit') || '12';
 
+  // Get Artists
   try {
     const response = await fetch(
       `https://api.deezer.com/chart/0/artists?limit=${limit}`,

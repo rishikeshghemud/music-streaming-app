@@ -5,9 +5,8 @@ export async function GET(request: NextRequest) {
   const limit = searchParams.get('limit') || '12';
   const index = parseInt(searchParams.get('index') || '0');
 
+  // Get Tracks
   try {
-    // Using Top Worldwide playlist (ID: 3155776842)
-    // This is more reliable than chart/0/tracks
     const response = await fetch(
       `https://api.deezer.com/playlist/3155776842`,
       {
@@ -22,10 +21,8 @@ export async function GET(request: NextRequest) {
     }
 
     const data = await response.json();
-
-    debugger;
     
-    // Extract tracks and implement pagination manually
+    // Assign value to diffent variable
     const allTracks = data.tracks?.data || [];
     const limitNum = parseInt(limit);
     const paginatedTracks = allTracks.slice(index, index + limitNum);

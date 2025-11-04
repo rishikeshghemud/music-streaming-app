@@ -4,9 +4,8 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const limit = searchParams.get('limit') || '12';
 
+  //Get Albums
   try {
-    // Using Top Albums playlist approach
-    // Get trending tracks and extract unique albums
     const response = await fetch(
       `https://api.deezer.com/playlist/3155776842`,
       {
@@ -23,7 +22,7 @@ export async function GET(request: NextRequest) {
     const data = await response.json();
     const tracks = data.tracks?.data || [];
     
-    // Extract unique albums from tracks
+    // Map values 
     const albumMap = new Map();
     tracks.forEach((track: any) => {
       if (track.album && !albumMap.has(track.album.id)) {

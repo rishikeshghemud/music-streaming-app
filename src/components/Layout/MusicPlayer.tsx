@@ -17,9 +17,9 @@ import { formatTime } from '@/lib/utils';
 export const MusicPlayer: React.FC = () => {
   const dispatch = useDispatch();
   const { currentTrack, isPlaying, currentTime, duration } = useSelector(
-    (state: RootState) => state.player
+    (state: RootState) => state.player    // Get global state
   );
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);    // Assign native HTML audio element to Ref hook
 
   // Load and play new track when currentTrack changes
   useEffect(() => {
@@ -62,6 +62,7 @@ export const MusicPlayer: React.FC = () => {
     }
   }, [isPlaying, currentTrack, dispatch]);
 
+  // Handle audio seconds changes
   const handleTimeUpdate = () => {
     if (audioRef.current) {
       dispatch(
@@ -100,6 +101,7 @@ export const MusicPlayer: React.FC = () => {
     dispatch(togglePlayPause());
   };
 
+  // If there is no current track hide the player
   if (!currentTrack) {
     return null;
   }

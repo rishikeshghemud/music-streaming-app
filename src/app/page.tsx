@@ -13,7 +13,7 @@ import { setCurrentTrack, setQueue } from '@/lib/store/slices/playerSlice';
 import { Track } from '@/types/music';
 
 export default function Home() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();   // Get state from global store
   
   const {
     data: tracksData,
@@ -21,10 +21,10 @@ export default function Home() {
     hasNextPage,
     isFetchingNextPage,
     isLoading: tracksLoading,
-  } = useTrendingTracks();
+  } = useTrendingTracks();          // Fetch Trending tracks
 
-  const { data: artists, isLoading: artistsLoading } = useTopArtists();
-  const { data: albums, isLoading: albumsLoading } = useNewReleases();
+  const { data: artists, isLoading: artistsLoading } = useTopArtists();   // Fetch Artists
+  const { data: albums, isLoading: albumsLoading } = useNewReleases();    // Fetch Albums
 
   const allTracks = tracksData?.pages.flatMap((page) => page.tracks) || [];
 
@@ -33,7 +33,7 @@ export default function Home() {
     dispatch(setQueue(allTracks));
   };
 
-  // Infinite Scroll
+  // Infinite Scroll Logic
   useEffect(() => {
     const handleScroll = () => {
       const scrollHeight = document.documentElement.scrollHeight;
@@ -81,7 +81,7 @@ export default function Home() {
           )}
         </section>
 
-        {/* Popular Artists Section */}
+        {/* Artists Section */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">Popular Artists</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* New Releases Section */}
+        {/* Albums Section */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">New Releases</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -106,6 +106,7 @@ export default function Home() {
         </section>
       </main>
 
+      {/* Persistent Music Player at bottom */}
       <MusicPlayer />
     </div>
   );

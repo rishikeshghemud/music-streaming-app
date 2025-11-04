@@ -5,6 +5,7 @@ interface TracksResponse {
   nextPage: number;
 }
 
+// Function used by tanstack to fetch tracks
 export const fetchTrendingTracks = async ({ pageParam = 0 }): Promise<TracksResponse> => {
   const response = await fetch(
     `/api/music/tracks?limit=12&index=${pageParam}`
@@ -22,6 +23,7 @@ export const fetchTrendingTracks = async ({ pageParam = 0 }): Promise<TracksResp
   };
 };
 
+// Function used by tanstack to fetch Artists
 export const fetchTopArtists = async (): Promise<Artist[]> => {
   const response = await fetch('/api/music/artists?limit=12');
   
@@ -33,6 +35,7 @@ export const fetchTopArtists = async (): Promise<Artist[]> => {
   return data.data;
 };
 
+// Function used by tanstack to fetch Albums
 export const fetchNewReleases = async (): Promise<Album[]> => {
   const response = await fetch('/api/music/albums?limit=12');
   
