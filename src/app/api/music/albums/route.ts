@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+const BASE_URL = process.env.BASE_URL;
+
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const limit = searchParams.get('limit') || '12';
@@ -7,7 +9,7 @@ export async function GET(request: NextRequest) {
   //Get Albums
   try {
     const response = await fetch(
-      `https://api.deezer.com/playlist/3155776842`,
+      `${BASE_URL}/playlist/3155776842`,
       {
         headers: {
           'Accept': 'application/json',
